@@ -88,11 +88,41 @@ python3 plot_results.py --e5 e5_output.txt
 
 ---
 
+## Troubleshooting: FIPS self-test (E0)
+
+The E0 self-test uses only the **CPU reference** in `sha256_cpu.h`. If all three
+vectors show **FAIL**, the usual cause is a **symbol name clash**: host and device
+code both exposed a constant table named `SHA256_K`, so the linker could bind the
+CPU code to the device constant (zeros on the host).
+
+**Permanent fix (already applied):** the CPU round constants are named
+`SHA256_K_CPU` in `sha256_cpu.h`, so they cannot collide with device symbols in
+`sha256.cuh`.
+
+Re-build and re-run:
+
+```bash
+make clean && make
+./sha256_bench 0
+```
+
+Expected output:
+
+```
+[FIPS] Test 0 ("<empty>..."): PASS
+[FIPS] Test 1 ("abc..."): PASS
+[FIPS] Test 2 ("abcdbcdec...nopq..."): PASS
+```
+
+Once E0 passes, continue with E1–E5.
+
+---
+
 ## Notes
 
 - The CPU reference is single-threaded and compiled `-O3`; it is a fair
   baseline for the paper's "single CPU core" comparison.
 - For very small N (< 10,000), GPU launch overhead dominates — this is
   expected and reported honestly in the operating map.
-- If you see FIPS FAIL, check your GPU's compute capability flag; using
-  the wrong `-arch` can silently produce wrong results on some devices.
+- If GPU verification fails (not FIPS), check your GPU's compute capability flag;
+  using the wrong `-arch` can produce wrong device results on some GPUs.

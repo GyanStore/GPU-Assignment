@@ -15,7 +15,7 @@ static const uint32_t SHA256_H0[8] = {
     0x6a09e667u, 0xbb67ae85u, 0x3c6ef372u, 0xa54ff53au,
     0x510e527fu, 0x9b05688cu, 0x1f83d9abu, 0x5be0cd19u
 };
-static const uint32_t SHA256_K[64] = {
+static const uint32_t SHA256_K_CPU[64] = {
     0x428a2f98u,0x71374491u,0xb5c0fbefu,0xe9b5dba5u,0x3956c25bu,0x59f111f1u,
     0x923f82a4u,0xab1c5ed5u,0xd807aa98u,0x12835b01u,0x243185beu,0x550c7dc3u,
     0x72be5d74u,0x80deb1feu,0x9bdc06a7u,0xc19bf174u,0xe49b69c1u,0xefbe4786u,
@@ -51,7 +51,7 @@ static void cpu_compress(uint32_t st[8], const uint8_t blk[64]) {
     uint32_t a=st[0],b=st[1],c=st[2],d=st[3];
     uint32_t e=st[4],f=st[5],g=st[6],h=st[7];
     for (int i = 0; i < 64; ++i) {
-        uint32_t T1 = h + CPU_S1(e) + CPU_CH(e,f,g) + SHA256_K[i] + W[i];
+        uint32_t T1 = h + CPU_S1(e) + CPU_CH(e,f,g) + SHA256_K_CPU[i] + W[i];
         uint32_t T2 = CPU_S0(a) + CPU_MAJ(a,b,c);
         h=g; g=f; f=e; e=d+T1;
         d=c; c=b; b=a; a=T1+T2;
