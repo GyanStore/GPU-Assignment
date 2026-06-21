@@ -1,0 +1,14 @@
+# Build artifacts
+sha256_gpu/sha256_bench
+sha256_gpu/*.o
+sha256_gpu/e5_output.txt
+sha256_gpu/full_results.txt
+sha256_gpu/*.pdf
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
