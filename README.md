@@ -15,7 +15,8 @@ GPU-Assignment/
 ├── docs/
 │   ├── GPU_Prog_ASSIGNMENT.pdf          # Official assignment (Problem 4)
 │   ├── SHA256_GPU_CUDA_IEEE_Paper.pdf   # Original report (baseline B0 design)
-│   └── SHA256_GPU_Paper_Revised.docx    # Revised report (B0 + B2 pipeline + operating map)
+│   ├── SHA256_GPU_Paper_Revised.docx    # Revised report (B0 + B2 pipeline + operating map)
+│   └── SHA256_GPU_Paper_Revised.pdf     # Revised report (PDF, submission-ready)
 └── sha256_gpu/
     ├── main.cu           # Benchmark suite (experiments E0–E5)
     ├── kernels.cuh       # GPU SHA-256 kernels (B0 baseline, B2 stream variant)
@@ -60,7 +61,7 @@ Experiments **E0–E5** measure correctness, throughput, block-size tuning, tran
 ## Reports
 
 - **Original paper** (`docs/SHA256_GPU_CUDA_IEEE_Paper.pdf`): Full design and methodology for the baseline GPU SHA-256 engine.
-- **Revised paper** (`docs/SHA256_GPU_Paper_Revised.docx`): Adds stream pipelining (B2), empirical operating map, and submission-ready results tables (fill with measured numbers from your GPU runs).
+- **Revised paper** (`docs/SHA256_GPU_Paper_Revised.pdf` / `.docx`): Adds stream pipelining (B2), empirical operating map, and submission-ready results tables (fill with measured numbers from your GPU runs).
 
 ---
 
