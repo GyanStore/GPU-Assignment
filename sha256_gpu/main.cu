@@ -20,7 +20,7 @@
  *   nvcc -O3 -arch=sm_86 -o sha256_bench main.cu
  *   ./sha256_bench
  *
- * Author  : Swaraj Mahindrakar (G25AIT1179)
+ * Author  : Shruthi Chinnasamy (G25AIT1165)
  * Course  : GPU Programming — IIT Jodhpur
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -468,7 +468,7 @@ int main(int argc, char* argv[]) {
     printf("\n");
     printf("╔══════════════════════════════════════════════════════╗\n");
     printf("║   Parallel SHA-256 on GPU — Benchmark Suite         ║\n");
-    printf("║   Swaraj Mahindrakar — G25AIT1179 — IIT Jodhpur     ║\n");
+    printf("║   Shruthi Chinnasamy — G25AIT1165 — IIT Jodhpur     ║\n");
     printf("╚══════════════════════════════════════════════════════╝\n");
 
     print_device_info();

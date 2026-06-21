@@ -7,7 +7,7 @@
  * The compression function is self-contained per thread — no shared memory,
  * no inter-thread communication, no synchronisation barriers.
  *
- * Author : Swaraj Mahindrakar (G25AIT1179)
+ * Author : Shruthi Chinnasamy (G25AIT1165)
  */
 
 #pragma once

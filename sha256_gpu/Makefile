@@ -1,6 +1,6 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Makefile — Parallel SHA-256 GPU Benchmark
-# Author : Swaraj Mahindrakar (G25AIT1179) — IIT Jodhpur
+# Author : Shruthi Chinnasamy (G25AIT1165) — IIT Jodhpur
 # ─────────────────────────────────────────────────────────────────────────────
 
 NVCC       := nvcc

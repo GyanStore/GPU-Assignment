@@ -4,7 +4,7 @@
  * Shared device constants, macros, and type definitions for the
  * parallel SHA-256 GPU engine.
  *
- * Author : Swaraj Mahindrakar (G25AIT1179)
+ * Author : Shruthi Chinnasamy (G25AIT1165)
  * Course : GPU Programming — IIT Jodhpur
  */
 

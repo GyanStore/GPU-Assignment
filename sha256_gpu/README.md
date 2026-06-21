@@ -1,5 +1,5 @@
 # Parallel SHA-256 on GPU — Code Package
-**Swaraj Mahindrakar | G25AIT1179 | IIT Jodhpur**
+**Shruthi Chinnasamy | G25AIT1165 | IIT Jodhpur**
 
 ---
 

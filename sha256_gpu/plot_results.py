@@ -13,7 +13,7 @@ Usage:
 
   2. Or paste E3/E4 numbers directly into the arrays at the bottom.
 
-Author : Swaraj Mahindrakar (G25AIT1179)
+Author : Shruthi Chinnasamy (G25AIT1165)
 """
 
 import sys

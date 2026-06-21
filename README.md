@@ -2,7 +2,7 @@
 
 **Course:** GPU Programming — IIT Jodhpur  
 **Problem:** Implement a cryptography algorithm over GPU (SHA-256 / MD5 hashing)  
-**Authors:** Shruthi Chinnasamy, Swaraj Mahindrakar (G25AIT1179)
+**Author:** Shruthi Chinnasamy (G25AIT1165)
 
 This repository contains the CUDA implementation, benchmark suite, and report documents for **bulk SHA-256 digest computation on GPU**.
 

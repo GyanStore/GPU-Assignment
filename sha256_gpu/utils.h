@@ -3,7 +3,7 @@
  * utils.h
  * Dataset generation, hex printing, and GPU-vs-CPU verification helpers.
  *
- * Author : Swaraj Mahindrakar (G25AIT1179)
+ * Author : Shruthi Chinnasamy (G25AIT1165)
  */
 
 #include <cstdint>
