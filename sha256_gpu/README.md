@@ -90,14 +90,16 @@ python3 plot_results.py --e5 e5_output.txt
 
 ## Troubleshooting: FIPS self-test (E0)
 
-The E0 self-test uses only the **CPU reference** in `sha256_cpu.h`. If all three
-vectors show **FAIL**, the usual cause is a **symbol name clash**: host and device
-code both exposed a constant table named `SHA256_K`, so the linker could bind the
-CPU code to the device constant (zeros on the host).
+The E0 self-test uses only the **CPU reference** in `sha256_cpu.h`.
 
-**Permanent fix (already applied):** the CPU round constants are named
-`SHA256_K_CPU` in `sha256_cpu.h`, so they cannot collide with device symbols in
-`sha256.cuh`.
+If all three vectors show **FAIL**, check these in order:
+
+1. **Round-constant typo (fixed in current repo):** `K[2]` must be
+   `0xb5c0fbcf` (not `0xb5c0fbef`) in both `sha256_cpu.h` and `sha256.cuh`.
+   A single wrong constant breaks every digest.
+
+2. **Host/device symbol clash (also fixed):** CPU round constants are named
+   `SHA256_K_CPU` so they cannot collide with device symbols in `sha256.cuh`.
 
 Re-build and re-run:
 
